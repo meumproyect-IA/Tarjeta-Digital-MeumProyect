@@ -183,6 +183,8 @@ body {
 }
 
 .texto-boton .detalle {
+   justify-content: center;
+    text-align: center;
     font-size: 0.75rem;
     color: rgba(255, 255, 255, 0.6);
     margin-top: 3px;
