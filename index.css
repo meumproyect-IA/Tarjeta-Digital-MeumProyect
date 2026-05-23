@@ -1,0 +1,200 @@
+/* ==========================================================================
+   PALETA INSTITUCIONAL - MEUMPROYECT (TARJETA DIGITAL)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pinyon+Script&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000a1f; 
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Contenedor Principal: Ajustado al móvil */
+.tarjeta-contenedor {
+    background: linear-gradient(to bottom, #00122e 0%, #000a1f 100%);
+    width: 100%;
+    max-width: 375px; 
+    min-height: 667px;
+    border-radius: 30px;
+    padding: 20px 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* ==========================================================================
+   ENCABEZADO (LOGOTIPO Y TIPOGRAFÍAS ELEGANTES)
+   ========================================================================== */
+
+.header-logo {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.logo-principal {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5), 
+                 0px 0px 10px rgba(0, 150, 255, 0.2);
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.nombre-asesora {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 2.8rem;
+    color: #ffffff;
+    font-weight: 400;
+    line-height: 2;
+    margin-bottom: 5px;
+}
+
+.puesto-subtitulo {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.slogan {
+    font-size: 1.1rem;
+    color: #ffffff;
+    font-weight: 400;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(0, 150, 255, 0.2);
+    padding-bottom: 15px;
+}
+
+/* ==========================================================================
+   BLOQUE INTERACTIVO DE BOTONES (EFECTO NEÓN + ÍCONOS BLANCOS)
+   ========================================================================== */
+
+.botones-contenedor {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.boton-interactivo {
+    background: rgba(0, 18, 46, 0.8);
+    border: 1.5px solid rgba(0, 150, 255, 0.3);
+    border-radius: 15px;
+    text-decoration: none;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 150, 255, 0.15); 
+}
+
+/* Regla absoluta de Paito: Todos los íconos forzados a blanco puro para armonía */
+.icono {
+    font-size: 1.4rem;
+    margin-right: 15px;
+    color: #ffffff !important;
+    filter: brightness(0) invert(1); /* Filtro cuántico para blanquear emojis nativos */
+}
+
+.boton-interactivo:hover {
+    border-color: rgba(0, 150, 255, 0.8);
+    box-shadow: 0 0 18px rgba(0, 150, 255, 0.4);
+    transform: translateY(-2px);
+    background: rgba(0, 18, 46, 1);
+}
+
+/* Botón Destacado: Llamar Ahora */
+.boton-principal {
+    background: rgba(0, 150, 255, 0.1);
+    border-color: rgba(0, 150, 255, 0.5);
+    justify-content: center;
+}
+
+.boton-principal .accion {
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+/* Grid de 4 columnas simétricas en una sola fila */
+.botones-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.botones-grid .boton-interactivo {
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 10px 10px;
+}
+
+.botones-grid .icono {
+    margin-right: 0;
+    margin-bottom: 8px;
+}
+
+.etiqueta-mini {
+    display: flex;
+        flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Botón Ancho de Ubicación */
+.boton-ancho {
+    justify-content: flex-start;
+}
+
+.texto-boton {
+    display: flex;
+    flex-direction: column;
+}
+
+.texto-boton .accion {
+        justify-content: center;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.texto-boton .detalle {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 3px;
+}
+
+/* Animación de pulso para cuando hagan clic */
+.click-animacion {
+    animation: pulsoEfecto 0.4s ease-out;
+}
+
+@keyframes pulsoEfecto {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); box-shadow: 0 0 25px rgba(0, 150, 255, 0.8); }
+    100% { transform: scale(1); }
+}
