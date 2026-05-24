@@ -141,7 +141,7 @@ body {
 }
 
 .botones-grid .boton-interactivo {
-    display : flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
@@ -154,31 +154,33 @@ body {
 }
 
 .etiqueta-mini {
-        flex-direction: column;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     text-align: center;
-
     font-size: 0.65rem;
     font-weight: 700;
     color: rgba(255, 255, 255, 0.8);
 }
 
-/* Botón Ancho de Ubicación */
+/* Botón Ancho de Ubicación: Expandido simétricamente de lado a lado */
 .boton-ancho {
-    justify-content: flex -center;
+    grid-column: 1 / -1;
+    width: 100%;
+    justify-content: center;
 }
 
 .texto-boton {
-            display : flex;
-            justify-content: center;
-    text-align: center;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
 }
 
 .texto-boton .accion {
-        display : flex;
-            justify-content: center;
+    display: flex;
+    justify-content: center;
     text-align: center;
     font-weight: 700;
     font-size: 1rem;
@@ -186,9 +188,9 @@ body {
 }
 
 .texto-boton .detalle {
-        display : flex;
-            justify-content: center;
-                text-align: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
     font-size: 0.75rem;
     color: rgba(255, 255, 255, 0.6);
     margin-top: 2px;
