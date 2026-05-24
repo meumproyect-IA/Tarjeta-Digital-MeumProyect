@@ -1,5 +1,5 @@
 /* ==========================================================================
-   LÓGICA INTERACTIVA Y CONEXIÓN PWA - MEUMPROYECT
+   LÓGICA INTERACTIVA Y CONEXIÓN PWA - MEUMPROYECT (PARCHE DE PRUEBA)
    ========================================================================== */
 
 let eventoInstalacion = null;
@@ -18,54 +18,40 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 2. Escucha del evento secreto del navegador para mostrar el botón
+    // 2. Forzamos la visibilidad del botón para pruebas
+    if (botonInstalar) {
+        botonInstalar.style.display = 'flex';
+    }
+
+    // Escucha del evento secreto
     window.addEventListener('beforeinstallprompt', (e) => {
-        // Evita que el navegador intente hacer las cosas a su manera antigua
         e.preventDefault();
-        // Guarda el evento en nuestra caja
         eventoInstalacion = e;
-        // Hace visible el botón de instalación en la tarjeta digital
-        if (botonInstalar) {
-            botonInstalar.style.display = 'flex';
-        }
     });
 
     // 3. Acción al presionar el botón de instalar
     if (botonInstalar) {
         botonInstalar.addEventListener('click', async (e) => {
             e.preventDefault();
-            if (!eventoInstalacion) return;
             
-            // Muestra la pregunta nativa del celular o PC
-            eventoInstalacion.prompt();
-            
-            // Espera a ver qué decide el usuario
-            const { outcome } = await eventoInstalacion.userChoice;
-            console.log(`El usuario decidió: ${outcome}`);
-            
-            // Limpiamos la caja porque el evento ya se usó
-            eventoInstalacion = null;
-            // Escondemos el botón ya que se cumplió la misión
-            botonInstalar.style.display = 'none';
+            if (eventoInstalacion) {
+                eventoInstalacion.prompt();
+                const { outcome } = await eventoInstalacion.userChoice;
+                console.log(`El usuario decidió: ${outcome}`);
+                eventoInstalacion = null;
+            } else {
+                console.log('El navegador no permite la instalación en este momento.');
+                alert('La función de instalación no está disponible en este navegador o ya instalaste la tarjeta.');
+            }
         });
     }
-
-    // Ocultar botón si ya está instalada la app
-    window.addEventListener('appinstalled', () => {
-        console.log('¡MeumProyect instalada con éxito!');
-        if (botonInstalar) {
-            botonInstalar.style.display = 'none';
-        }
-        eventoInstalacion = null;
-    });
 });
 
 // CABLE LÓGICO PARA EL SERVICE WORKER
-// ==========================================
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('./sw.js')
-            .then(reg => console.log('Sintonía de PWA enraizada con éxito en la Cabaña'))
-            .catch(err => console.log('Circunstancia con el registro del motor', err));
+            .then(reg => console.log('Sintonía de PWA enraizada'))
+            .catch(err => console.log('Circunstancia con el registro', err));
     });
 }
