@@ -11,7 +11,7 @@
 }
 
 body {
-    background-color: #000a1f; 
+background: radial-gradient(circle at top center, #001e4a 0%, #000a1f 100%);
     font-family: 'Montserrat', sans-serif;
     display: flex;
     justify-content: center;
