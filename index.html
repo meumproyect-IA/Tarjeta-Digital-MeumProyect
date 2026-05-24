@@ -3,64 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MeumProyect - Tarjeta Digital</title>
+    <title>Tarjeta Digital - Ing. Germán Ruz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="index.css">
-    <link rel="manifest" href="manifest.json">
 </head>
 <body>
 
     <div class="tarjeta-contenedor">
         
         <header class="header-logo">
-            <h1 class="logo-principal">MeumProyect</h1>
-            <h2 class="nombre-asesora">Ing. Germán Ruz</h2>
-            <p class="puesto-subtitulo">Asesor</p>
+            <div class="logo-principal">MeumProyect</div>
+            <h1 class="nombre-asesora">Ing. Germán Ruz</h1>
+            <div class="puesto-subtitulo">Asesor</div>
             <p class="slogan">Tu Idea - Tu Proyecto</p>
         </header>
 
         <main class="botones-contenedor">
             
-            <a href="#" id="btn-instalar" class="boton-interactivo" style="display: none; background: rgba(0, 150, 255, 0.25); border-color: rgba(0, 150, 255, 0.8);">
-                <span class="icono">📲</span>
+            <a href="#" class="boton-interactivo boton-principal" id="btn-instalar">
+                <i class="fa-solid fa-mobile-screen-button icono"></i>
                 <div class="texto-boton">
-                    <span class="accion" style="color: #ffffff; font-weight: 700;">Agregar a la Pantalla</span>
+                    <span class="accion">Agregar a la Pantalla</span>
                     <span class="detalle">Instala la tarjeta en tu celular</span>
                 </div>
             </a>
 
-            <a href="tel:+529994252104" class="boton-interactivo boton-principal">
-                <span class="icono">📞</span>
+            <a href="tel:+521234567890" class="boton-interactivo">
+                <i class="fa-solid fa-phone icono"></i>
                 <div class="texto-boton">
                     <span class="accion">Llamar Ahora</span>
                 </div>
             </a>
 
             <div class="botones-grid">
-                <a href="sms:+529994252104" class="boton-interactivo">
-                    <span class="icono">💬</span>
+                <a href="sms:+521234567890" class="boton-interactivo">
+                    <i class="fa-solid fa-comment-sms icono"></i>
                     <span class="etiqueta-mini">Mensaje</span>
                 </a>
-
-                <a href="mailto:meumproyect@gmail.com?subject=Consulta%20MeumProyect&body=Hola%20Germán,%20me%20interesa%20una%20asesoría..." class="boton-interactivo">
-                    <span class="icono">✉️</span>
+                
+                <a href="mailto:correo@meumproyect.com" class="boton-interactivo">
+                    <i class="fa-solid fa-envelope icono"></i>
                     <span class="etiqueta-mini">Correo</span>
                 </a>
-
-                <a href="https://wa.me/529994252104?text=Hola%20Germán,%20vengo%20de%20tu%20tarjeta%20digital.%20Me%20interesa%20agendar%20una%20asesoría%20para%20mi%20proyecto." target="_blank" class="boton-interactivo">
-                    <span class="icono">🟢</span>
+                
+                <a href="https://wa.me/521234567890" class="boton-interactivo" target="_blank">
+                    <i class="fa-brands fa-whatsapp icono"></i>
                     <span class="etiqueta-mini">WhatsApp</span>
                 </a>
-
-                <a href="https://meumproyect-ia.github.io/-Inicio/" target="_blank" class="boton-interactivo">
-                    <span class="icono">💼</span>
+                
+                <a href="https://meumproyect-ia.github.io/-Inicio/" class="boton-interactivo" target="_blank">
+                    <i class="fa-solid fa-globe icono"></i>
                     <span class="etiqueta-mini">Web</span>
                 </a>
             </div>
 
-            <a href="https://maps.google.com/?q=IYEM+Instituto+Yucateco+de+Emprendedores+Merida" target="_blank" class="boton-interactivo boton-ancho">
-                <div class="texto-boton">
+            <a href="https://maps.google.com" class="boton-interactivo boton-ancho" target="_blank">
+                <i class="fa-solid fa-location-dot icono-ubicacion"></i>
+                <div class="texto-ubicacion">
                     <span class="accion">Ubicación - Servicios</span>
-                    <span class="detalle">Asesoría - Diseño - Logistíca - Desarrollo</span>
+                    <span class="detalle">Asesoría - Diseño - Logística - Desarrollo</span>
                 </div>
             </a>
 
@@ -68,6 +69,14 @@
 
     </div>
 
-    <script src="index.js"></script>
+    <script>
+        // Animación de pulso cuántico al hacer click en los botones interactivos
+        document.querySelectorAll('.boton-interactivo').forEach(boton => {
+            boton.addEventListener('click', function() {
+                this.classList.add('click-animacion');
+                setTimeout(() => { this.classList.remove('click-animacion'); }, 400);
+            });
+        });
+    </script>
 </body>
 </html>
