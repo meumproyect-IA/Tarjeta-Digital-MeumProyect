@@ -1,18 +1,224 @@
-/* ... más código ... */
-    .texto-ubicacion .detalle {
-        font-size: 0.75rem;
-        color: rgba(255, 255, 255, 0.6);
-        margin-top: 2px;
-    }
+/* ==========================================================================
+   PALETA INSTITUCIONAL - MEUMPROYECT (TARJETA DIGITAL)
+   ========================================================================== */
 
-    /* Animación de pulso para cuando hagan clic */
-    .click-animacion {
-        animation: pulsoEfecto 0.4s ease-out;
-    }
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-    @keyframes pulsoEfecto {
-        0% { transform: scale(1); }
-        50% { transform: scale(0.95); box-shadow: 0 0 25px rgba(0, 150, 255, 0.8); }
-        100% { transform: scale(1); }
-    }
- /* <--- ESTA LLAVE ES LA QUE SOBRA Y GENERA LOS 5 ERRORES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000a1f; 
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Contenedor Principal: Ajuste 3 - Degradado radial estilo reflector superior */
+.tarjeta-contenedor {
+    background: radial-gradient(circle at top center, #001e4a 0%, #000a1f 100%);
+    width: 100%;
+    max-width: 375px; 
+    min-height: 667px;
+    border-radius: 30px;
+    padding: 25px 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(0, 150, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* ==========================================================================
+   ENCABEZADO (LOGOTIPO Y TIPOGRAFÍAS INSTITUCIONALES)
+   ========================================================================== */
+
+.header-logo {
+    text-align: center;
+    margin-bottom: 3px;
+}
+
+.logo-principal {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5), 
+                 0px 0px 10px rgba(0, 150, 255, 0.2);
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+/* Ajuste 1: Tipografía imponente Montserrat con clamp() para fluidez responsiva perfecta */
+.nombre-asesora {
+    font-size: clamp(1rem, 5vw, 1.5rem);
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1.3;
+    margin-bottom: 8px;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.puesto-subtitulo {
+    font-size: 1rem;
+    color: rgba(0, 150, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.slogan {
+    font-size: 1.5rem;
+    color: #ffffff;
+    font-weight: 400;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(0, 150, 255, 0.2);
+    padding-bottom: 15px;
+}
+
+/* ==========================================================================
+   BLOQUE INTERACTIVO DE BOTONES (UNIFORMIDAD NEÓN)
+   ========================================================================== */
+
+.botones-contenedor {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+/* Ajuste 2: Base de fondo oscura uniforme y elegante para todos los botones pasivos */
+.boton-interactivo {
+    background: rgba(0, 10, 31, 0.85);
+    border: 1.5px solid rgba(0, 150, 255, 0.25);
+    border-radius: 15px;
+    text-decoration: none;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Iconos de la lista y grid: Blancos armónicos alineados a la izquierda */
+.icono {
+    font-size: 1.4rem;
+    margin-right: 15px;
+    color: #ffffff !important;
+}
+
+/* Efecto hover sofisticado con resalte neón azul */
+.boton-interactivo:hover {
+    border-color: rgba(0, 150, 255, 0.8);
+    box-shadow: 0 0 15px rgba(0, 150, 255, 0.35);
+    transform: translateY(-2px);
+    background: rgba(0, 18, 46, 1);
+}
+
+/* Botón Destacado (PWA): Conserva un sutil borde más encendido que invita al click */
+.boton-principal {
+    border-color: rgba(0, 150, 255, 0.5);
+}
+
+.texto-boton {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.texto-boton .accion {
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+}
+
+.texto-boton .detalle {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 2px;
+}
+
+/* Grid de 4 columnas simétricas en una sola fila */
+.botones-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.botones-grid .boton-interactivo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 12px 4px;
+}
+
+.botones-grid .icono {
+    margin-right: 0;
+    margin-bottom: 8px;
+}
+
+.etiqueta-mini {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Ajuste 6 y 7: Botón Ancho de Ubicación con cuadrícula de 3 columnas para centrado absoluto */
+.boton-ancho {
+    grid-column: 1 / -1;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50px 1fr 50px; /* Columna fija izquierda para el icono, centro para texto, derecha para balance */
+    align-items: center;
+    padding: 15px 10px;
+}
+
+/* Icono clásico de Google Maps en el centro de su espacio izquierdo reservado */
+.icono-ubicacion {
+    font-size: 1.4rem;
+    color: #ffffff !important;
+    grid-column: 1;
+    justify-self: center;
+}
+
+/* Bloque de texto perfectamente adueñado del centro del botón */
+.texto-ubicacion {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.texto-ubicacion .accion {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 2px;
+}
+
+.texto-ubicacion .detalle {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 2px;
+}
+
+/* Animación de pulso para cuando hagan clic */
+.click-animacion {
+    animation: pulsoEfecto 0.4s ease-out;
+}
+
+@keyframes pulsoEfecto {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); box-shadow: 0 0 25px rgba(0, 150, 255, 0.8); }
+    100% { transform: scale(1); }
+}
