@@ -1,0 +1,16 @@
+{
+  "short_name": "MeumProyect",
+  "name": "MeumProyect Consultoría",
+  "icons": [
+    {
+      "src": "https://meumproyect-ia.github.io/-Inicio/favicon.ico",
+      "type": "image/x-icon",
+      "sizes": "64x64 32x32 24x24 16x16"
+    }
+  ],
+  "start_url": "./index.html",
+  "background_color": "#000a1f",
+  "theme_color": "#00122e",
+  "display": "standalone",
+  "orientation": "portrait"
+}

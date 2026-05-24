@@ -17,3 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+// Cable lógico para activar la instalación como aplicación (PWA)
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./index.js')
+            .then(reg => console.log('Sintonía de PWA activada con éxito'))
+            .catch(err => console.log('Circunstancia con el registro', err));
+    });
+}

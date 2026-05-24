@@ -154,7 +154,6 @@ body {
 }
 
 .etiqueta-mini {
-    display: flex;
         flex-direction: column;
     justify-content: center;
     text-align: center;
@@ -166,16 +165,20 @@ body {
 
 /* Botón Ancho de Ubicación */
 .boton-ancho {
-    justify-content: flex-start;
+    justify-content: flex -center;
 }
 
 .texto-boton {
+            display : flex;
+            justify-content: center;
+    text-align: center;
     display: flex;
     flex-direction: column;
 }
 
 .texto-boton .accion {
-        justify-content: center;
+        display : flex;
+            justify-content: center;
     text-align: center;
     font-weight: 700;
     font-size: 1rem;
@@ -183,11 +186,12 @@ body {
 }
 
 .texto-boton .detalle {
-   justify-content: center;
-    text-align: center;
+        display : flex;
+            justify-content: center;
+                text-align: center;
     font-size: 0.75rem;
     color: rgba(255, 255, 255, 0.6);
-    margin-top: 3px;
+    margin-top: 2px;
 }
 
 /* Animación de pulso para cuando hagan clic */
