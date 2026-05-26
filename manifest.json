@@ -1,23 +1,21 @@
 {
   "short_name": "MeumProyect",
-  "name": "MeumProyect Consultoria",
+  "name": "MeumProyect - Germán Ruz",
   "icons": [
     {
       "src": "icons/icon-192.png",
       "type": "image/png",
-      "sizes": "192x192",
-      "purpose": "any maskable"
+      "sizes": "192x192"
     },
     {
       "src": "icons/icon-512.png",
       "type": "image/png",
-      "sizes": "512x512",
-      "purpose": "any maskable"
+      "sizes": "512x512"
     }
   ],
-  "start_url": "index.html",
-  "background_color": "#000a1f",
-  "theme_color": "#00122e",
+  "start_url": "./index.html",
+  "background_color": "#030d1a",
+  "theme_color": "#030d1a",
   "display": "standalone",
   "orientation": "portrait"
 }

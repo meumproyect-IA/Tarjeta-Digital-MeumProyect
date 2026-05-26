@@ -1,36 +1,43 @@
-/* ==========================================================================
-   MOTOR PRINCIPAL - SERVICE WORKER MEUMPROYECT
-   ========================================================================== */
-
-const CACHE_NAME = 'meumproyect-v1';
-const ASSETS = [
-    './',
-    './index.html',
-    './index.css',
-    './index.js',
-    './manifest.json'
+const CACHE_NAME = 'meumproyect-cache-v1';
+const assetsToCache = [
+  './',
+  './index.html',
+  './index.css',
+  './index.js',
+  './manifest.json',
+  './icons/icon-192.png',
+  './icons/icon-512.png'
 ];
 
-// 1. Instalación y enraizamiento del caché en la Cabaña de Cristal
+// Instalar el Service Worker y almacenar los archivos en caché
 self.addEventListener('install', (event) => {
-    event.waitUntil(
-        caches.open(CACHE_NAME).then((cache) => {
-            console.log('Caché enraizado con éxito');
-            return cache.addAll(ASSETS);
-        })
-    );
+  event.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => {
+      return cache.addAll(assetsToCache);
+    })
+  );
 });
 
-// 2. Activación y limpieza de circunstancias viejas
+// Activar el Service Worker y limpiar cachés antiguas si las hay
 self.addEventListener('activate', (event) => {
-    console.log('Service Worker activo y listo');
+  event.waitUntil(
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.map((cache) => {
+          if (cache !== CACHE_NAME) {
+            return caches.delete(cache);
+          }
+        })
+      );
+    })
+  );
 });
 
-// 3. El puente de escucha obligatorio para permitir el flujo sin desmadre
+// Responder desde la caché cuando no hay conexión a internet
 self.addEventListener('fetch', (event) => {
-    event.respondWith(
-        caches.match(event.request).then((response) => {
-            return response || fetch(event.request);
-        })
-    );
+  event.respondWith(
+    caches.match(event.request).then((response) => {
+      return response || fetch(event.request);
+    })
+  );
 });
